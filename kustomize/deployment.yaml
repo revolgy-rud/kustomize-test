@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: bye
+  name: ahoj
 spec:
   minReadySeconds: 3
   revisionHistoryLimit: 5
@@ -13,14 +13,14 @@ spec:
     type: RollingUpdate
   selector:
     matchLabels:
-      app: bye
+      app: ahoj
   template:
     metadata:
       labels:
-        app: bye
+        app: ahoj
     spec:
       containers:
-        - name: bye
+        - name: ahoj
           image: k8s.gcr.io/echoserver:1.4
           imagePullPolicy: IfNotPresent
           ports:
