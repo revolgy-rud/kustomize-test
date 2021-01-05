@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello
+  name: bye
 spec:
   minReadySeconds: 3
   revisionHistoryLimit: 5
@@ -13,14 +13,14 @@ spec:
     type: RollingUpdate
   selector:
     matchLabels:
-      app: hello
+      app: bye
   template:
     metadata:
       labels:
-        app: hello
+        app: bye
     spec:
       containers:
-        - name: hello
+        - name: bye
           image: k8s.gcr.io/echoserver:1.4
           imagePullPolicy: IfNotPresent
           ports:
